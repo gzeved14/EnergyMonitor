@@ -1,6 +1,5 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { LoginHeader } from './components/login-header/login-header';
-import { AuthService } from '../../services/auth-service';
 import { LoginFormComponent } from './components/login-form/login-form';
 
 @Component({
@@ -9,10 +8,4 @@ import { LoginFormComponent } from './components/login-form/login-form';
   templateUrl: './login.html',
   styleUrls: ['./login.css'],
 })
-export class Login {
-  private auth = inject(AuthService);
-
-  login() {
-    this.auth.login();
-  }
-}
+export class Login {}

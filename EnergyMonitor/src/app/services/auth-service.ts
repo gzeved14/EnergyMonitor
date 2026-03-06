@@ -5,25 +5,24 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class AuthService {
+  private readonly authStorageKey = 'auth';
+  private readonly router = inject(Router);
 
   isAuthenticated = signal<boolean>(this.initializeAuthState());
-  private router = inject(Router);
 
-  private initializeAuthState():boolean {
-    const auth = localStorage.getItem("auth");
-    return auth === "true";
+  private initializeAuthState(): boolean {
+    return localStorage.getItem(this.authStorageKey) === 'true';
   }
 
-  login() {
+  login(): void {
     this.isAuthenticated.set(true);
-    localStorage.setItem("auth", "true");
-    this.router.navigate(['home'])
+    localStorage.setItem(this.authStorageKey, 'true');
+    this.router.navigate(['home']);
   }
 
-  logout() {
+  logout(): void {
     this.isAuthenticated.set(false);
-    localStorage.removeItem("auth");
-    this.router.navigate([''])
+    localStorage.removeItem(this.authStorageKey);
+    this.router.navigate(['']);
   }
-
 }
