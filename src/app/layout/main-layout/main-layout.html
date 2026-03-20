@@ -11,7 +11,7 @@
     <nav class="flex-1 px-4 py-6 space-y-2 overflow-y-auto">
       <p class="px-4 text-[10px] font-bold text-emerald-500 uppercase tracking-widest mb-4">Principal</p>
       
-      <a routerLink="/" routerLinkActive="bg-emerald-800/50 border-r-4 border-emerald-400" 
+      <a routerLink="/app" routerLinkActive="bg-emerald-800/50 border-r-4 border-emerald-400" [routerLinkActiveOptions]="{ exact: true }"
          class="flex items-center px-4 py-3 rounded-xl hover:bg-emerald-900 transition-all group">
         <span class="text-emerald-400 group-hover:scale-110 transition"></span>
         <span class="ml-3 font-medium text-slate-200">Dashboard Global</span>
@@ -19,13 +19,13 @@
 
       <p class="px-4 text-[10px] font-bold text-emerald-500 uppercase tracking-widest mt-8 mb-4">Gestão Florestal</p>
 
-      <a routerLink="/areas" routerLinkActive="bg-emerald-800/50 border-r-4 border-emerald-400" 
+      <a routerLink="/app/areas" routerLinkActive="bg-emerald-800/50 border-r-4 border-emerald-400" [routerLinkActiveOptions]="{ exact: true }"
          class="flex items-center px-4 py-3 rounded-xl hover:bg-emerald-900 transition-all group">
         <span class="group-hover:rotate-12 transition"></span>
         <span class="ml-3 font-medium text-slate-200">Áreas Reservadas</span>
       </a>
 
-      <a routerLink="/sensors" routerLinkActive="bg-emerald-800/50 border-r-4 border-emerald-400" 
+      <a routerLink="/app/sensors" routerLinkActive="bg-emerald-800/50 border-r-4 border-emerald-400" [routerLinkActiveOptions]="{ exact: true }"
          class="flex items-center px-4 py-3 rounded-xl hover:bg-emerald-900 transition-all group">
         <span class="group-hover:animate-pulse"></span>
         <span class="ml-3 font-medium text-slate-200">Sensores IoT</span>

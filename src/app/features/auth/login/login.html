@@ -28,6 +28,10 @@
               class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-lg transition-all disabled:opacity-50">
         @if (isLoading()) { <span>Entrando...</span> } @else { <span>Entrar</span> }
       </button>
+
+      <p class="text-center text-sm text-slate-600 mt-4">
+        Não tem cadastro? <a routerLink="/register" class="text-emerald-600 font-bold">Criar conta</a>
+      </p>
     </form>
   </div>
 </div>

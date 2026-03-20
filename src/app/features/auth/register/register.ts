@@ -2,11 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../../shared/services/auth-service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-register',
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, RouterLink],
   templateUrl: './register.html',
   styleUrl: './register.css',
 })
@@ -20,10 +20,11 @@ private fb = inject(FormBuilder);
   registerForm = this.fb.group({
     nome: ['', [Validators.required, Validators.minLength(3)]],
     email: ['', [Validators.required, Validators.email]],
-    senha: ['', [Validators.required, Validators.minLength(6)]],
-    especialidade: [''],
+    senha: ['', [Validators.required, Validators.minLength(8)]],
+    especialidade: ['', [Validators.required]],
     titulacao: ['', [Validators.required]],
     matricula: ['', [Validators.required]],
+    linhaPesquisa: [''],
     dataNascimento: ['', [Validators.required]]
   });
 

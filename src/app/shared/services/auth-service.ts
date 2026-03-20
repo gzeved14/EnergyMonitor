@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { computed, inject, Injectable, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, shareReplay, tap } from 'rxjs';
-import { environment } from '../../../environments/environment.development';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -25,12 +25,10 @@ export class AuthService {
   }
 
   register(userData: any): Observable<any> {
-    return this.http.post(`${this.API}/register`, userData);
+    return this.http.post(`${this.API}/pesquisador`, userData);
   }
 
   login(credentials: any): Observable<any> {
-    console.log(credentials)
-    console.log(`${this.API}/login`)
     return this.http.post<any>(`${this.API}/login`, credentials).pipe(
       tap(res => this.setSession(res)),
       shareReplay()
